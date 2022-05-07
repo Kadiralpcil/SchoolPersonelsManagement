@@ -1,0 +1,37 @@
+﻿@model StudentAndClassViewModel
+
+<div class="container">
+    <div class="row align-items-center ml-4 mb-2" style="width: 80%; height: 20rem;
+                    border: 1px solid; border-radius: 10px; box-shadow: 5px 10px 18px #888888;">
+        <div class="col-4">
+            <h3 style="text-transform:uppercase; padding-left:5px;">@Model.classroom.ClassNumber-@Model.classroom.ClassName</h3>
+            <p style=""><b>Sınıf mevcudu: 50</b></p>
+        </div>
+        <div class="col-4">
+            <img style="width:50px; height:50px; border-radius:50%;" src="~/Images/women-teacher-github.png" alt="Teacher-img" />
+            <div>--Teacher-Name</div>
+        </div>
+        <div class="col-4">
+            <a class="btn btn-danger" asp-action="Delete" asp-controller="Classroom" asp-route-Id="@Model.classroom.Id">Sil</a>
+            <a class="btn btn-primary mt-2">Güncelle</a>
+            <a class="btn btn-primary mt-2" asp-route-Id="@Model.classroom.Id">Sınıfa Öğrenci Ekle</a>
+        </div>
+
+
+    </div>
+    <div class="row">
+        @foreach (var item in Model.classroom.Students)
+        {
+            <div class="row align-items-center ml-4 mb-2" style="width: 40%; height: 10rem;
+                    border: 1px solid; border-radius: 10px; box-shadow: 5px 10px 18px #888888;">
+              <h1>Öğrenci Kartı</h1>
+                <div>@item.FullName</div>
+
+
+            </div>
+
+        }
+    </div>
+
+
+</div>

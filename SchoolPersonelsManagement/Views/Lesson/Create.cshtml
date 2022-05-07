@@ -1,0 +1,13 @@
+﻿@model Lesson
+<form asp-action="Create" asp-controller="Lesson">
+    <div class="input-group mb-3 w-50">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+        </div>
+        <label class="input-group-text" for="inputGroupSelect01">Ders adı</label>
+        <input type="text" class="form-control" asp-for="@Model.LessonName">
+    </div>
+    <div class="col">
+        <input type="submit" class="btn btn-info w-75" value="Create" />
+    </div>
+</form>

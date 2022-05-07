@@ -1,0 +1,23 @@
+﻿@model SchoolPersonelsManagement.Models.Classroom
+
+<form method="Post" asp-action="CreateClassroom" asp-controller="Classroom">
+    <div class="row">
+        <div class="input-group mb-3 w-25">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Sınıf Numarasını Seçin</label>
+            </div>
+            <select asp-for="ClassNumber" class="custom-select" id="inputGroupSelect01">
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+        </div>
+        <div class="input-group mb-3 w-25">
+            <input asp-for="ClassName" type="text" style="text-transform:uppercase" maxlength="1" class="form-control" placeholder="Sınıf İsmini girin..">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary"type="submit">Yarat</button>
+            </div>
+        </div>
+    </div>
+</form>

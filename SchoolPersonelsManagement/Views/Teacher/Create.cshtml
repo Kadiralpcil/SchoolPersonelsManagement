@@ -1,0 +1,39 @@
+﻿@model TeacherLessonViewModel
+
+<form asp-action="Create" asp-controller="Teacher">
+    <div class="input-group mb-3 w-50">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+        </div>
+        <label class="input-group-text" for="inputGroupSelect01">Öğretmen İsmi</label>
+        <input type="text" class="form-control" asp-for="@Model.Teacher.FullName">
+    </div>
+    <div class="input-group mb-3 w-50">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+        </div>
+        <label class="input-group-text" for="inputGroupSelect01">Öğretmen Resmi</label>
+        <input type="text" class="form-control" asp-for="@Model.Teacher.ImgUrl">
+    </div>
+    <div class="mb-3 w-50">
+        <label class="form-label">Öğretmenin verebilecği dersleri seçin</label>
+        <select class="form-control js-example-basic-multiple" asp-for="lessons" multiple="multiple">
+            @foreach (var Lesson in ViewBag.Lessons)
+            {
+                <option value="@Lesson.Id">@Lesson.LessonName</option>
+}
+        </select>
+    </div>
+    <div class="col">
+        <input type="submit" class="btn btn-info w-50" value="Tamam" />
+    </div>
+</form>
+
+@section Scripts{
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2();
+        });
+    </script>
+}

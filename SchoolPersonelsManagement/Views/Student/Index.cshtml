@@ -1,0 +1,25 @@
+﻿@model IEnumerable<SchoolPersonelsManagement.Models.Student>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="row align-items-center ml-4 mb-2" style="width: 40%; height: 10rem;
+                    border: 1px solid; border-radius: 10px; box-shadow: 5px 10px 18px #888888;">
+                <div class="col-4">
+                    <h3 style="text-transform:uppercase; padding-left:5px;">@item.FullName</h3>
+                    @*<p style=""><b>Sınıfı:@item.classroom.ClassNumber - @item.classroom.ClassName</b></p>*@
+                </div>
+                <div class="col-4">
+                    <img style="width:50px; height:50px; border-radius:50%;" src="@item.ImgUrl" />
+                    <div>--Teacher-Name</div>
+                </div>
+                <div class="col-4">
+                    <a class="btn btn-primary" asp-action="Detail" asp-controller="Classroom" asp-route-Id="@item.Id">Detay</a>
+                    <a class="btn btn-primary mt-2" asp-action="Update" asp-controller="Student"  asp-route-Id="@item.Id">Güncelle</a>
+                    <a asp-action="Delete" asp-controller="Student" asp-route-id="@item.Id" class="btn btn-danger mt-2">Sil</a>
+                </div>
+
+
+            </div>
+
+        }
+    </div>

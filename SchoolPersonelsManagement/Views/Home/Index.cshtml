@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="./css/Privatized.css" />
+<div class="text-center">
+    <h1 class="display-4">Merhaba <img class="emoji-hi" src="~/Images/Emoji-hi.png" /></h1>
+    <h3>Bu proje MVC tasarımı kullanılarak Asp.NET ile geliştirlimiş örnek bir okul projesidir </h3>
+    <p> <h5>Bu proje içerisinde,</h5>
+        <ul>
+            <li>Okul Yönetim Kişilerini</li>
+            <li>Öğretmenleri</li>
+            <li>Öğrencileri</li>
+            <li>Öğrencilerin aldığı dersleri ve filtreleme işlemleri</li>
+        </ul>
+    Görebilir.Ekleme,Silme,Güncelleme metotlarını kullanabilirsiniz. Diğer Projelerim için;
+    </p><a href="https://github.com/Kadiralpcil" target="_blank">Github Sayfam</a>
+</div>
+<div class="col-12 row mt-2 d-flex align-items-center">
+    <a asp-action="Index" asp-controller="Student" class="col-4"><div class="card" style="width: 20rem;">
+    <img style="width:300px; height:300px;" src="./Images/Student-emoji.png" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title d-flex justify-content-center">Students</h5>
+    </div>
+</div></a>
+    <a asp-action="Index" asp-controller="Person" class="col-4"><div class="card" style="width: 20rem;">
+    <img style="width:300px; height:300px;" src="./Images/teacher-emoji.png" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title d-flex justify-content-center">Teachers</h5>
+    </div>
+</div></a>
+    <a asp-action="Index" asp-controller="Person" class="col-4"><div class="card" style="width: 20rem;">
+    <img src="./Images/Managment-emoji.png" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title d-flex justify-content-center">Managment</h5>
+    </div>
+</div></a>
+</div>

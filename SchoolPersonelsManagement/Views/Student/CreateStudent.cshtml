@@ -1,0 +1,35 @@
+﻿@model StudentAndClassViewModel
+
+<form asp-action="CreateStudent" asp-controller="Student">
+    <div class="input-group mb-3 w-50">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+        </div>
+        <label class="input-group-text" for="inputGroupSelect01">Öğrenci İsmi</label>
+        <input type="text" class="form-control" asp-for="@Model.Student.FullName">
+    </div>
+    <div class="input-group mb-3 w-50">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+        </div>
+        <label class="input-group-text" for="inputGroupSelect01">Öğrenci Resmi</label>
+        <input type="text" class="form-control" asp-for="@Model.Student.ImgUrl">
+    </div>
+    <div class="input-group mb-3 w-25">
+        <div class="input-group-prepend">
+            <div class="btn btn-outline-secondary">Öğrencinin Sınıfını Seçin</div>
+        </div>
+        <select class="custom-select" id="inputGroupSelect03" asp-for="@Model.Student.classroom.Id">
+            @foreach (var item in Model.classrooms)
+            {
+                <option style="text-transform:uppercase" value="@item.Id">@item.ClassNumber-@item.ClassName</option>
+            }
+
+
+        </select>
+    </div>
+    <div class="col">
+        <input type="submit" class="btn btn-info w-75" value="Create" />
+    </div>
+</form>
+

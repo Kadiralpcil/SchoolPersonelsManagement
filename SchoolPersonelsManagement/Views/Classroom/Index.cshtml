@@ -1,0 +1,43 @@
+﻿@model IEnumerable<SchoolPersonelsManagement.Models.Classroom>
+
+@if (Model == null)
+{
+
+
+    <h1>Model Null</h1>
+}
+else
+{
+<div class="container">
+    <nav class="navbar navbar-light bg-light justify-content-between mb-3">
+        <a class="navbar-brand">Sınıflar</a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ara</button>
+        </form>
+    </nav>
+    <div class="card-style row">
+        @foreach (var item in Model)
+        {
+            <div class="row align-items-center ml-4 mb-2" style="width: 40%; height: 10rem;
+                    border: 1px solid; border-radius: 10px; box-shadow: 5px 10px 18px #888888;">
+                <div class="col-4">
+                    <h3 style="text-transform:uppercase; padding-left:5px;">@item.ClassNumber-@item.ClassName</h3>
+                    <p style=""><b>Sınıf mevcudu: 50</b></p>
+                </div>
+                <div class="col-4">
+                    <img style="width:50px; height:50px; border-radius:50%;" src="./Images/women-teacher-github.png" alt="Teacher-img" />
+                    <div>--Teacher-Name</div>
+                </div>
+                <div class="col-4">
+                    <a class="btn btn-primary" asp-action="Detail" asp-controller="Classroom" asp-route-Id="@item.Id">Detay</a>
+                    <a class="btn btn-primary mt-2">Güncelle</a>
+                </div>
+
+
+            </div>
+
+        }
+    </div>
+</div>
+}
